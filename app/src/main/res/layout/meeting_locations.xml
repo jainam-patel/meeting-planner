@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    android:padding="5dp"
+    android:background="@drawable/loc_shape">
+
+    <TextView
+        android:id="@+id/meeting_loc"
+        android:text="Locations details"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:padding="5dp"
+        android:fontFamily="@font/franklin_gothic_demi_cond_regular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/meeting_time"
+        android:text="Time details"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:padding="5dp"
+        android:fontFamily="@font/seaford_reg"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/meeting_loc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

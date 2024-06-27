@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.DateActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="?attr/actionBarSize"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:title="Meeting Planner"
+                app:titleTextColor="@color/white" />
+
+            <TextClock
+                android:id="@+id/textClock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/franklin_gothic_demi_cond_regular"
+                android:format24Hour="HH:mm:ss"
+                android:padding="7dp"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.812"
+                app:layout_constraintStart_toEndOf="@+id/toolbar"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/textViewDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="--- Pick date and location ---"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:fontFamily="@font/seaford_reg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout1"
+        android:layout_margin="15dp"/>
+
+    <LinearLayout
+        android:id="@+id/hL1"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/date"
+            android:hint="DATE"
+            android:textSize="17sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:background="@drawable/recycler_shape"
+            app:backgroundTint="@null"
+            android:layout_width="150dp"
+            android:layout_height="50dp"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            android:gravity="center"
+            android:background="@drawable/button_shape"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/selectDate"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:contentDescription="calendar"
+                android:src="@drawable/calendar_icon"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1dp"
+                android:gravity="center"
+                android:text="/"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/todayDate"
+                android:layout_width="95dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="Select Today's Date"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewLocations"
+        android:layout_width="match_parent"
+        android:layout_height="453dp"
+        android:background="@drawable/recycler_shape"
+        android:padding="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/hL2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hL1"
+        tools:listitem="@layout/location_item" />
+
+    <LinearLayout
+        android:id="@+id/hL2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/btnShowTime"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginEnd="25dp"
+            android:layout_weight="3"
+            android:drawableLeft="@drawable/time_table_icon"
+            android:background="@drawable/button_shape"
+            app:backgroundTint="@null"
+            android:text="SHOW TIMETABLE"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAddLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:contentDescription="fab"
+            android:backgroundTint="@color/purple_100"
+            android:src="@drawable/add_icon"
+            android:elevation="0dp"
+            app:elevation="0dp"
+            app:layout_constraintStart_toEndOf="@+id/btnShowTime" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

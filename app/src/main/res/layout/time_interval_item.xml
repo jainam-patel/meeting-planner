@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginStart="6dp"
+    android:layout_marginEnd="6dp"
+    android:layout_marginTop="3dp"
+    android:layout_marginBottom="3dp"
+    android:id="@+id/timeInterval"
+    android:padding="3dp"
+    android:background="@drawable/recycler_shape">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LL4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:background="@drawable/time_interval_shape_left"
+            android:orientation="vertical"
+            android:padding="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
+
+<!--            <TextView-->
+<!--                android:id="@+id/textViewUTCDate"-->
+<!--                android:text="UTC-DATE"-->
+<!--                android:textSize="16sp"-->
+<!--                android:gravity="end"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"/>-->
+            <TextView
+                android:id="@+id/textViewUTCHour"
+                android:text="UTC-Hour"
+                android:textSize="16sp"
+                android:gravity="end"
+                android:paddingStart="1dp"
+                android:paddingEnd="2dp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewTimeAndPlace"
+            tools:listitem="@layout/time_and_place"
+            android:background="@drawable/time_interval_shape_right"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:padding="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
